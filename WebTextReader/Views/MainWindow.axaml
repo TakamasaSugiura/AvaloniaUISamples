@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WebTextReader.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="320"
+		Width="800" Height="600" MinWidth="480" MinHeight="320"
+		xmlns:cnv="clr-namespace:WebTextReader.Converters;assembly=WebTextReader"
+        x:Class="WebTextReader.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="WebTextReader">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid RowDefinitions="40, *" Margin="5">
+		<Grid Grid.Row="0" DockPanel.Dock="Top" ColumnDefinitions="40, *, Auto">
+			<TextBlock Grid.Column="0" Text="URL:" VerticalAlignment="Center" />
+			<TextBox Grid.Column="1" Text="{Binding Url}" VerticalAlignment="Center"/>
+			<Button Command="{Binding GetContent}" IsEnabled="{Binding CanGet}" Grid.Column="2" Content="Get" Margin="5 0 0 0"/>
+		</Grid>
+		<TextBox Text="{Binding WebContent}"
+				 Grid.Row="1"
+				 ScrollViewer.VerticalScrollBarVisibility="Auto"
+				 >
+		</TextBox>
+	</Grid>
+
+</Window>

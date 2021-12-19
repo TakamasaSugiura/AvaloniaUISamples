@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BmiCalculator.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="180"
+        x:Class="BmiCalculator.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		Width="360" Height="180"
+		CanResize="False"
+        Title="BmiCalculator">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Grid RowDefinitions="40, 40, 40, *" ColumnDefinitions="100, *" Margin="5">
+		<TextBlock Text="Height(m)" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+		<TextBox Text="{Binding Height}" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
+		<TextBlock Text="Weight(kg)" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
+		<TextBox Text="{Binding Weight}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
+		<TextBlock Text="BMI" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
+		<TextBox Text="{Binding Bmi}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" IsReadOnly="True"/>
+		<Button Content="Calculate" Command="{Binding CalculateBmi}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+	</Grid>
+
+</Window>
