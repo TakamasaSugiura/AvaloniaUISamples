@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BmiCalculator", "BmiCalcula
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTextReader", "WebTextReader\WebTextReader.csproj", "{6B0ABC2E-ABD7-469B-9285-1B68A43B6831}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Counter", "Counter\Counter.csproj", "{FF46F4A1-655B-4BDF-8997-916BC541A6E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6B0ABC2E-ABD7-469B-9285-1B68A43B6831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B0ABC2E-ABD7-469B-9285-1B68A43B6831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B0ABC2E-ABD7-469B-9285-1B68A43B6831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF46F4A1-655B-4BDF-8997-916BC541A6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF46F4A1-655B-4BDF-8997-916BC541A6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF46F4A1-655B-4BDF-8997-916BC541A6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF46F4A1-655B-4BDF-8997-916BC541A6E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

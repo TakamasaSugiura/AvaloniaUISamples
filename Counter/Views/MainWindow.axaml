@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Counter.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+		Width="400" Height="400" CanResize="False"
+        x:Class="Counter.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Counter">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*" Margin="5">
+		<Grid.Styles>
+			<Style Selector="TextBox">
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="FontSize" Value="24"/>
+				<Setter Property="Margin" Value="2"/>
+				<Setter Property="IsReadOnly" Value="True"/>
+			</Style>
+			<Style Selector="Button">
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="FontSize" Value="18"/>
+				<Setter Property="Margin" Value="2"/>
+			</Style>
+		</Grid.Styles>
+		<TextBox Text="{Binding Counter7}" Grid.Column="0" Grid.Row="0" />
+		<TextBox Text="{Binding Counter8}" Grid.Column="1" Grid.Row="0" />
+		<TextBox Text="{Binding Counter9}" Grid.Column="2" Grid.Row="0" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="7" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="8" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="9" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<TextBox Text="{Binding Counter4}" Grid.Column="0" Grid.Row="2" />
+		<TextBox Text="{Binding Counter5}" Grid.Column="1" Grid.Row="2" />
+		<TextBox Text="{Binding Counter6}" Grid.Column="2" Grid.Row="2" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="4" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="5" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="6" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<TextBox Text="{Binding Counter1}" Grid.Column="0" Grid.Row="4" />
+		<TextBox Text="{Binding Counter2}" Grid.Column="1" Grid.Row="4" />
+		<TextBox Text="{Binding Counter3}" Grid.Column="2" Grid.Row="4" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="1" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="2" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Count up" Command="{Binding CountUp}" CommandParameter="3" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+		<Button Content="Clear" Command="{Binding Clear}" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+	</Grid>
+	
+</Window>

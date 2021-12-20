@@ -7,8 +7,6 @@ namespace BmiCalculator.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
-
         private string _height = "";
         public string Height
         {
