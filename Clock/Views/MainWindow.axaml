@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Clock.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="400" Height="200"
+        x:Class="Clock.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		CanResize="False"
+        Title="Clock">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid Margin="5" RowDefinitions="*, 60" Background="WhiteSmoke">
+		<Grid ColumnDefinitions="*, 70" Grid.Row="0" Background="LightGray" Margin="3">
+			<TextBlock Text="{Binding HoursMinutes}" FontSize="106" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0"/>
+			<TextBlock Text="{Binding Seconds}" FontSize="48" VerticalAlignment="Bottom" Grid.Column="1"/>
+		</Grid>
+		<Border Grid.Row="1" Background="DarkGray" Margin="3">
+    		<TextBlock Text="{Binding Date}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="WhiteSmoke"/>
+		</Border>
+	</Grid>
+
+</Window>
