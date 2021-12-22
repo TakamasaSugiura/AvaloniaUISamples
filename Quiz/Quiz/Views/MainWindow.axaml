@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Quiz.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="500" Height="200"
+        x:Class="Quiz.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		CanResize="False"
+        Title="Quiz">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid RowDefinitions="*,*" Margin="5">
+		<Grid ColumnDefinitions="*,*,*,*,2*" Margin="5" Background="WhiteSmoke">
+			<Grid.Styles>
+				<Style Selector="TextBlock">
+					<Setter Property="HorizontalAlignment" Value="Center"/>
+					<Setter Property="VerticalAlignment" Value="Center"/>
+					<Setter Property="FontSize" Value="36"/>
+				</Style>
+				<Style Selector="TextBox">
+					<Setter Property="HorizontalContentAlignment" Value="Center"/>
+					<Setter Property="VerticalContentAlignment" Value="Center"/>
+					<Setter Property="FontSize" Value="36"/>
+				</Style>
+			</Grid.Styles>
+			<TextBlock Text="{Binding Value1}" Grid.Column="0"/>
+			<TextBlock Text="+" Grid.Column="1"/>
+			<TextBlock Text="{Binding Value2}" Grid.Column="2"/>
+			<TextBlock Text="=" Grid.Column="3"/>
+			<TextBox Text="{Binding Answer}" MaxLength="3" Grid.Column="4" Margin="5" Background="White"/>
+		</Grid>
+		<Grid ColumnDefinitions="*,*" Margin="5" Grid.Row="1">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<TextBlock Text="{Binding Point}" VerticalAlignment="Center" FontSize="36"/>
+				<TextBlock Text="Point" VerticalAlignment="Bottom" FontSize="24"/>
+			</StackPanel>
+			<Button Content="Answer" Command="{Binding CheckAnswer}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="36" Grid.Column="1"/>
+		</Grid>
+	</Grid>
+
+</Window>
