@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CountDownTimer.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="500" Height="150"
+        x:Class="CountDownTimer.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		CanResize="False"
+        Title="CountDownTimer">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid RowDefinitions="2*,*" Margin="5">
+		<Grid ColumnDefinitions="*,*,*,*" Margin="2">
+			<TextBox Grid.Column="0" MaxLength="2" Text="{Binding Minutes}" FontSize="36"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+			<TextBlock Text="min" Grid.Column="1" FontSize="24" VerticalAlignment="Bottom"/>
+			<TextBox Grid.Column="2" MaxLength="2" Text="{Binding Seconds}" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+			<TextBlock Text="sec" Grid.Column="3" FontSize="24" VerticalAlignment="Bottom"/>
+		</Grid>
+		<Grid ColumnDefinitions="*,*,*" Grid.Row="1" Margin="2">
+			<Grid.Styles>
+				<Style Selector="Button">
+					<Setter Property="HorizontalAlignment" Value="Stretch"/>
+					<Setter Property="VerticalAlignment" Value="Stretch"/>
+					<Setter Property="HorizontalContentAlignment" Value="Center"/>
+					<Setter Property="VerticalContentAlignment" Value="Center"/>
+					<Setter Property="FontSize" Value="24"/>
+				</Style>
+			</Grid.Styles>
+			<Button Content="Start" Command="{Binding StartTimer}"/>
+			<Button Content="Stop" Command="{Binding StopTimer}" Grid.Column="1"/>
+			<Button Content="Clear" Command="{Binding ClearTimer}" Grid.Column="2"/>
+		</Grid>
+	</Grid>
+
+</Window>

@@ -1,7 +1,6 @@
 namespace Quiz.ViewModels
 
 open ReactiveUI
-open System.Collections.Generic
 open System
 
 type MainWindowViewModel() as self =
