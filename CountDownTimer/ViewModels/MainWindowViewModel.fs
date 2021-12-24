@@ -7,8 +7,8 @@ open System
 type MainWindowViewModel() as self =
     inherit ViewModelBase()
 
-    let mutable _minutes:int = 0
-    let mutable _seconds:int = 0
+    let mutable _minutes:string = "0"
+    let mutable _seconds:string = "0"
     let mutable _canStart:bool = true
     let mutable _canStop:bool = false
     let mutable _canClear:bool = true
@@ -16,7 +16,7 @@ type MainWindowViewModel() as self =
 
     do
         _timer.Interval <- new TimeSpan(0, 0, 1);
-        _timer.Tick.Add(fun arg -> self.CountDown())
+        _timer.Tick.Add(fun _ -> self.CountDown())
 
     member this.Greeting = "Welcome to Avalonia!"
     member this.Minutes with get() = _minutes and set(value) = this.RaiseAndSetIfChanged(&_minutes, value) |> ignore
@@ -27,14 +27,14 @@ type MainWindowViewModel() as self =
     member this.StopTimer() = _timer.Stop()
 
     member this.ClearTimer() =
-        this.Minutes <- 0
-        this.Seconds <- 0
+        this.Minutes <- "0"
+        this.Seconds <- "0"
     
     member this.CountDown() =
-        let nextSeconds = this.Seconds - 1
-        let nextMinutes = this.Minutes - if nextSeconds < 0 then 1 else 0
-        this.Minutes <- if nextMinutes > -1 then nextMinutes else 0
-        this.Seconds <- if nextSeconds > -1 then nextSeconds else if nextMinutes > -1 then 59 else 0
+        let nextSeconds = (this.Seconds |> int) - 1
+        let nextMinutes = (this.Minutes |> int) - if nextSeconds < 0 then 1 else 0
+        this.Minutes <- if nextMinutes > -1 then nextMinutes |> string else "0"
+        this.Seconds <- if nextSeconds > -1 then nextSeconds |> string else if nextMinutes > -1 then "59" else "0"
         if nextSeconds < 0 && nextMinutes < 0 then
             do
-                _timer.Stop()
+                this.StopTimer()
