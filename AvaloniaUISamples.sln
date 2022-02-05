@@ -15,6 +15,8 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Quiz", "Quiz\Quiz.fsproj", 
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "CountDownTimer", "CountDownTimer\CountDownTimer.fsproj", "{2E6C52B2-888F-41EC-8147-C926D47A03FA}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ImageViewer", "ImageViewer\ImageViewer.fsproj", "{900AC4F9-7E86-40CC-A3BB-25997E874E6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2E6C52B2-888F-41EC-8147-C926D47A03FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E6C52B2-888F-41EC-8147-C926D47A03FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E6C52B2-888F-41EC-8147-C926D47A03FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900AC4F9-7E86-40CC-A3BB-25997E874E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900AC4F9-7E86-40CC-A3BB-25997E874E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900AC4F9-7E86-40CC-A3BB-25997E874E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900AC4F9-7E86-40CC-A3BB-25997E874E6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
