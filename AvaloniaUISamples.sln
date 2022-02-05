@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clock", "Clock\Clock.csproj
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Quiz", "Quiz\Quiz.fsproj", "{41D7DA6D-C03B-49B4-9DF4-BF5546828E6E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CountDownTimer", "CountDownTimer\CountDownTimer.fsproj", "{2E6C52B2-888F-41EC-8147-C926D47A03FA}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "CountDownTimer", "CountDownTimer\CountDownTimer.fsproj", "{2E6C52B2-888F-41EC-8147-C926D47A03FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

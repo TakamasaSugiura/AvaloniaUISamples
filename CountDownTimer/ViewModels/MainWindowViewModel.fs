@@ -18,7 +18,6 @@ type MainWindowViewModel() as self =
         _timer.Interval <- new TimeSpan(0, 0, 1);
         _timer.Tick.Add(fun _ -> self.CountDown())
 
-    member this.Greeting = "Welcome to Avalonia!"
     member this.Minutes with get() = _minutes and set(value) = this.RaiseAndSetIfChanged(&_minutes, value) |> ignore
     member this.Seconds with get() = _seconds and set(value) = this.RaiseAndSetIfChanged(&_seconds, value) |> ignore
 
