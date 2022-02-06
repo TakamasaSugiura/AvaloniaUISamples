@@ -2,8 +2,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
+		Width="320" Height="240"
         x:Class="MessageBox.Services.MsgBox"
+		CanResize="False"
         Title="MsgBox">
-  <TextBlock Text="{Binding Message}"/>
+	<Border Padding="5">
+		<DockPanel>
+			<StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+				<Button Content="OK" Command="{Binding OkCommand}" IsVisible="{Binding OkButtonVisible}"/>
+				<Button Content="Cancel" Command="{Binding CancelCommand}" IsVisible="{Binding CancelButtonVisible}"/>
+			</StackPanel>
+			<StackPanel VerticalAlignment="Center"
+						HorizontalAlignment="Center">
+				<TextBlock Text="{Binding Message}"/>
+			</StackPanel>
+		</DockPanel>
+	</Border>
 </Window>
